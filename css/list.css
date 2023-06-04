@@ -66,11 +66,19 @@
   }
 
   /* Stylowanie zrobionych zadań */
-  .js-tasks li .list__item--done {
+  .js-done {
+      background-color: rgb(5, 141, 5);
+      color: #fff;
+      border-radius: 4px;
+          
+  }  
+  
+  .list__item--done {
     background-color: rgb(33, 218, 33);
-    color: #fff;
+    color: rgba(0, 0, 0, 0.5);
     border-radius: 4px;
     text-decoration: line-through; 
+
   }
 
   /* Stylowanie przycisku usuwania (kosz na śmieci) */
@@ -79,15 +87,7 @@
       align-items: flex-end;
       background-color: rgb(221, 30, 30);
       color: #fff;
-      justify-content: flex-end;
-
+    
   }
 
   /* Stylowanie przycisku z oznaczaniem jako zrobione */
-  .js-tasks li .js-done {
-      background-color: rgb(5, 141, 5);
-      color: #fff;
-      border-radius: 4px;
-    
-      
-  }

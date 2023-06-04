@@ -1,91 +1,93 @@
-.list__item{
+  /* Stylowanie tytułu listy */
+  .list {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+  }
 
-}
+  /* Stylowanie formularza */
+  .js-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+      max-width: 80%;
+  }
 
-.list__item--done{
+  /* Stylowanie grupy elementów formularza */
+  .form-group {
+      display: flex;
+      align-items: center;
+  }
+
+  /* Stylowanie pola tekstowego */
+  .js-newTask {
+      flex: 1;
+      height: 30px;
+      padding: 5px;
+      font-size: 16px;
+  }
+
+  /* Stylowanie przycisku "Dodaj zadanie" */
+  .js-form button {
+      margin: 10px;
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #036e72;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+  }
+
+  /* Stylowanie listy zadań */
+  .js-tasks {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+  }
+
+  /* Stylowanie elementów listy zadań */
+  .js-tasks li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* Dodajemy justify-content */
+      margin-bottom: 5px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Stylowanie przycisków w elemencie listy zadań */
+  .js-tasks li button {
+      margin-right: 20px;
+  }
+
+  /* Stylowanie zrobionych zadań */
+  .js-tasks li .list__item--done {
+    background-color: rgb(33, 218, 33);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: line-through; 
+  }
+
+  /* Stylowanie przycisku usuwania (kosz na śmieci) */
+  .js-tasks li .js-remove {
+      display: flex;
+      align-items: flex-end;
+      background-color: rgb(221, 30, 30);
+      color: #fff;
+      justify-content: flex-end;
+
+  }
+
+  /* Stylowanie przycisku z oznaczaniem jako zrobione */
+  .js-tasks li .js-done {
+      background-color: rgb(5, 141, 5);
+      color: #fff;
+      border-radius: 4px;
     
-}
-
-.form__labelText {
-    width: 100%;
-    max-width: 200px;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.form__field {
-    border: 1px solid #cacaca;
-    padding: 10px;
-    width: 100%;
-    max-width: 350px;
-    border-radius: 5px;
-}
-
-.form__field--color{
-    padding: 0;
-    border: none;
-}
-
-.form__field:required {
-    border: 2;
-    border-color: #2b2b2b;
-}
-
-.form__field:disabled {
-    border: 2;
-    border-color: #2b2b2b;
-    background-color: #8a8a8a;
-}
-
-.form__field:invalid {
-    background-color: #ffd6dc;
-}
-
-.form__field:valid {
-    background-color: #e8fde4;
-}
-
-.form__field:read-only {
-    background-color: #e9e9e9;
-}
-
-.form__field--select.form__field--select{
-    background-color: #ffffff;
-}
-
-.form__field--textarea{
-    resize: vertical;
-    min-height: 100px;
-}
-
-.form__fieldset {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px 0px;
-    box-shadow: 8px 8px 15px -15px rgba(104, 104, 104, 0.562);
-}
-
-.form__legend {
-    background-color: teal;
-    color: white;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.form__button {
-    width: 100%;
-    border: none;
-    background-color: teal;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.form__button:hover {
-    background-color: hsl(180, 100%, 30%);
-}
-
-.form__button:active {
-    background-color: hsl(180, 100%, 35%);
-}
+      
+  }

@@ -15,7 +15,12 @@
             content: newTaskContent,
         });
         render();
+        clearInput(); 
     };
+
+    const clearInput = () => {
+        document.querySelector(".js-newTask").value = ""; // Czyścimy wartość pola wpisywania
+      };
 
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
@@ -52,7 +57,7 @@
         for (const task of tasks) {
             htmlString += `
             <li
-            class="list__item${task.done ? " list__item--done" : ""}
+            class="list__item${task.done ? " list__item--done" : ""}"
             >
             <button class="js-done">zrobione?</button>
             <button class="js-remove">usuń</button>
@@ -63,11 +68,15 @@
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
+        document.querySelector(".js-stats").innerText = `
+        Liczba wszystkich zadań: ${tasks.length}\n
+        Liczba ukończonych zadań: ${tasks.filter(task => task.done).length}
+        `;
+    
         bindEvents();
     };
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
+    const onFormSubmit = (event) => { 
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
@@ -76,6 +85,7 @@
         }
 
         addNewTask(newTaskContent);
+        clearInput();
     };
 
     const init = () => {

@@ -1,44 +1,22 @@
   /* Stylowanie tytułu listy */
   .list {
+      display: flex;
+      flex-basis: 80%;
       font-size: 24px;
       color: #333;
       margin-bottom: 10px;
-      border: line 3;
-      border-color: #333;
-      border-radius: 3;
+      padding: 15px;
+      background-color: #fff;
+      border-color: #494949;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   }
 
-  .js-done {
-    background-color: rgb(5, 141, 5);
-    color: #fff;
-    margin: 10px;
-    border-radius: 4px;
-    position: relative; /* Dodajemy pozycjonowanie względem przycisku */
-  }
-  
-  .js-done::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #fff;
-    transform: scaleX(0); /* Początkowo przekreślenie jest niewidoczne */
-    transition: transform 0.3s ease; /* Dodajemy płynność animacji */
-  }
-  
-  .js-done:hover::after {
-    transform: scaleX(1); /* Wyświetlamy przekreślenie przy najechaniu */
-  }
   /* Stylowanie formularza */
   .js-form {
-      display: flex;
-      flex-direction: column;
       gap: 10px;
       margin-bottom: 20px;
-      max-width: 80%;
   }
 
   /* Stylowanie grupy elementów formularza */
@@ -50,6 +28,8 @@
   /* Stylowanie pola tekstowego */
   .js-newTask {
       flex: 1;
+      width: 80%;
+      align: justify;
       height: 30px;
       padding: 5px;
       font-size: 16px;
@@ -72,7 +52,9 @@
   .js-tasks {
       list-style-type: none;
       padding: 0;
-
+      font-size: 16px;
+      border-color: #494949;
+      border-radius: 2px;
   }
 
   /* Stylowanie elementów listy zadań */
@@ -83,6 +65,7 @@
       margin-bottom: 5px;
       padding: 10px;
       background-color: #fff;
+      border-color: #494949;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -93,24 +76,58 @@
 
   .list__item--done {
       background-color: rgb(33, 218, 33);
-      color: rgba(0, 0, 0, 0.5);
-      border-radius: 4px;
+      color: rgba(37, 1, 1, 0.7);
+      border-radius: 2px;
       text-decoration: line-through;
-      filter: blur(1px);
+      filter: blur(0.5px);
       /* Dodajemy rozmycie tekstu */
   }
 
   .js-tasks li .js-done {
-      order: 0;
-      padding: 8 px;
-      background-color: #0e9402;
-      border-radius: 5px;
+      background-color: rgb(5, 141, 5);
+      color: #fff;
+      margin: 10px;
+      border-radius: 4px;
+      position: relative;
+      /* Dodajemy pozycjonowanie względem przycisku */
+  }
+
+  .js-done::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #fff;
+      transform: scaleX(0);
+      /* Początkowo przekreślenie jest niewidoczne */
+      transition: transform 0.3s ease;
+      /* Dodajemy płynność animacji */
+  }
+
+  .js-done:hover::after {
+      transform: scaleX(1);
+      /* Wyświetlamy przekreślenie przy najechaniu */
+  }
+
+  .js-tasks li.list__item--done .js-done {
+      text-decoration: line-through;
+      filter: blur(1px);
   }
 
   .js-tasks li .js-remove {
-      order: 3;
-      padding: 8 px;
-      background-color: #dd1111;
-      border-radius: 5px;
+      order: 2;
+      background-color: rgb(221, 30, 30);
+      color: #fff;
+  }
+
+  .js-tasks li.list__item--done .js-remove {
       text-decoration: none;
+  }
+
+  .js-tasks li .js-remove:hover {
+      background-color: rgb(44, 20, 20);
+      transition: transform 0.5s ease-in;
+      transform: scaleX(0.9);
   }

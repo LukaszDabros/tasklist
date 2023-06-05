@@ -3,8 +3,35 @@
       font-size: 24px;
       color: #333;
       margin-bottom: 10px;
+      border: line 3;
+      border-color: #333;
+      border-radius: 3;
+
   }
 
+  .js-done {
+    background-color: rgb(5, 141, 5);
+    color: #fff;
+    margin: 10px;
+    border-radius: 4px;
+    position: relative; /* Dodajemy pozycjonowanie względem przycisku */
+  }
+  
+  .js-done::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0); /* Początkowo przekreślenie jest niewidoczne */
+    transition: transform 0.3s ease; /* Dodajemy płynność animacji */
+  }
+  
+  .js-done:hover::after {
+    transform: scaleX(1); /* Wyświetlamy przekreślenie przy najechaniu */
+  }
   /* Stylowanie formularza */
   .js-form {
       display: flex;
@@ -26,6 +53,8 @@
       height: 30px;
       padding: 5px;
       font-size: 16px;
+      border-color: #eee;
+      border-radius: 2px;
   }
 
   /* Stylowanie przycisku "Dodaj zadanie" */
@@ -43,8 +72,7 @@
   .js-tasks {
       list-style-type: none;
       padding: 0;
-      display: flex;
-      flex-direction: column;
+
   }
 
   /* Stylowanie elementów listy zadań */
@@ -52,7 +80,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* Dodajemy justify-content */
       margin-bottom: 5px;
       padding: 10px;
       background-color: #fff;
@@ -60,34 +87,30 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-  /* Stylowanie przycisków w elemencie listy zadań */
   .js-tasks li button {
-      margin-right: 20px;
+      margin-right: 10px;
   }
 
-  /* Stylowanie zrobionych zadań */
-  .js-done {
-      background-color: rgb(5, 141, 5);
-      color: #fff;
-      border-radius: 4px;
-          
-  }  
-  
   .list__item--done {
-    background-color: rgb(33, 218, 33);
-    color: rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
-    text-decoration: line-through; 
-
+      background-color: rgb(33, 218, 33);
+      color: rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      text-decoration: line-through;
+      filter: blur(1px);
+      /* Dodajemy rozmycie tekstu */
   }
 
-  /* Stylowanie przycisku usuwania (kosz na śmieci) */
+  .js-tasks li .js-done {
+      order: 0;
+      padding: 8 px;
+      background-color: #0e9402;
+      border-radius: 5px;
+  }
+
   .js-tasks li .js-remove {
-      display: flex;
-      align-items: flex-end;
-      background-color: rgb(221, 30, 30);
-      color: #fff;
-    
+      order: 3;
+      padding: 8 px;
+      background-color: #dd1111;
+      border-radius: 5px;
+      text-decoration: none;
   }
-
-  /* Stylowanie przycisku z oznaczaniem jako zrobione */

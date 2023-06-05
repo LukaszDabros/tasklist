@@ -16,3 +16,9 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+}

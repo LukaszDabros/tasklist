@@ -1,0 +1,18 @@
+.button {
+  height: 30px;
+  width: 30px;
+  background-color: rgb(55, 163, 73);
+  color: white;
+  padding: 2px;
+  border: none;
+  margin: 10px;
+}
+
+.button:active {
+  border: 1px solid rgb(49, 33, 19);
+  border-radius: 3px;
+}
+
+.button--remove {
+  background-color: rgb(219, 29, 29);
+}

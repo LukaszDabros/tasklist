@@ -1,133 +1,24 @@
-  /* Stylowanie tytułu listy */
-  .list {
-      display: flex;
-      flex-basis: 80%;
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 10px;
-      padding: 15px;
-      background-color: #fff;
-      border-color: #494949;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.list {
+  list-style: none;
+  margin: 0px;
+  padding: 30px 20px 20px 20px;
+  background-color: white;
+}
 
-  }
+.list__item {
+  display: flex;
+  align-items: center;
+  /* margin-top: 10px; */
+  border-bottom: 2px solid hsl(0, 0%, 93%);
+}
 
-  /* Stylowanie formularza */
-  .js-form {
-      gap: 10px;
-      margin-bottom: 20px;
-  }
+.list__task {
+  flex-grow: 1;
+  flex-basis: 50%;
+  word-break: break-word;
+  /* margin-bottom: 10px; */
+}
 
-  /* Stylowanie grupy elementów formularza */
-  .form-group {
-      display: flex;
-      align-items: center;
-  }
-
-  /* Stylowanie pola tekstowego */
-  .js-newTask {
-      flex: 1;
-      width: 80%;
-      align: justify;
-      height: 30px;
-      padding: 5px;
-      font-size: 16px;
-      border-color: #eee;
-      border-radius: 2px;
-  }
-
-  /* Stylowanie przycisku "Dodaj zadanie" */
-  .js-form button {
-      margin: 10px;
-      padding: 8px 16px;
-      font-size: 16px;
-      background-color: #036e72;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-  }
-
-  /* Stylowanie listy zadań */
-  .js-tasks {
-      list-style-type: none;
-      padding: 0;
-      font-size: 16px;
-      border-color: #494949;
-      border-radius: 2px;
-  }
-
-  /* Stylowanie elementów listy zadań */
-  .js-tasks li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 5px;
-      padding: 10px;
-      background-color: #fff;
-      border-color: #494949;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .js-tasks li button {
-      margin-right: 10px;
-  }
-
-  .list__item--done {
-      background-color: rgb(33, 218, 33);
-      color: rgba(37, 1, 1, 0.7);
-      border-radius: 2px;
-      text-decoration: line-through;
-      filter: blur(0.5px);
-      /* Dodajemy rozmycie tekstu */
-  }
-
-  .js-tasks li .js-done {
-      background-color: rgb(5, 141, 5);
-      color: #fff;
-      margin: 10px;
-      border-radius: 4px;
-      position: relative;
-      /* Dodajemy pozycjonowanie względem przycisku */
-  }
-
-  .js-done::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: #fff;
-      transform: scaleX(0);
-      /* Początkowo przekreślenie jest niewidoczne */
-      transition: transform 0.3s ease;
-      /* Dodajemy płynność animacji */
-  }
-
-  .js-done:hover::after {
-      transform: scaleX(1);
-      /* Wyświetlamy przekreślenie przy najechaniu */
-  }
-
-  .js-tasks li.list__item--done .js-done {
-      text-decoration: line-through;
-      filter: blur(1px);
-  }
-
-  .js-tasks li .js-remove {
-      order: 2;
-      background-color: rgb(221, 30, 30);
-      color: #fff;
-  }
-
-  .js-tasks li.list__item--done .js-remove {
-      text-decoration: none;
-  }
-
-  .js-tasks li .js-remove:hover {
-      background-color: rgb(44, 20, 20);
-      transition: transform 0.5s ease-in;
-      transform: scaleX(0.9);
-  }
+.list__task--done {
+  text-decoration: line-through;
+}

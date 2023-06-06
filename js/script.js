@@ -58,6 +58,9 @@
 
   const inputReset = (input) => {
     input.value = "";
+  };
+
+  const inputFocus = (input) => {
     input.focus();
   };
 

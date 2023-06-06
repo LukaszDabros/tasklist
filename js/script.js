@@ -39,17 +39,18 @@
     for (const task of tasks) {
       htmlString += `
       <li 
-       class="list__item"
-      >
+       class="list__item">      
        <button class="button js-done">
-        ${task.done ? "✔" : "?"}
-       </button>
+        ${task.done ? "✔" : "?"}</button>
+
        <span class="list__task ${task.done ? "list__task--done" : ""}">
         ${task.addTask}</span>
+
        <button class="button button--remove js-remove ">X</button>
       </li>
     `;
     }
+
     document.querySelector(".js-list").innerHTML = htmlString;
     toggleDoneButtons();
     removeButtons();
@@ -57,9 +58,6 @@
 
   const inputReset = (input) => {
     input.value = "";
-  };
-
-  const inputFocus = (input) => {
     input.focus();
   };
 
@@ -74,7 +72,6 @@
       return;
     }
     addNewTask(addTask);
-
     inputReset(input);
   };
 

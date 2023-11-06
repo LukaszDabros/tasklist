@@ -6,6 +6,8 @@
   padding: 2px;
   border: none;
   margin: 10px;
+  cursor: pointer;
+  
 }
 
 .button:active {

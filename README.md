@@ -10,7 +10,7 @@ Simple task list with done, to do and delete.
 
 ![animated instruction](https://github.com/LukaszDabros/tasklist/blob/main/images/showroom.gif?raw=true)
 
-The technologies used in the project:
+## The technologies used in the project:
 
 - JavaScript ES6
 - HTML
